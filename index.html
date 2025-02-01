@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Paradise</title>
+  <link rel="shortcut icon" href="assets/logo-header.png" type="image/x-icon">
+  <!-- DaisyUI & tailwind cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- google fonts adlam cdn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+  <!-- google fonts sora cdn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <!-- fontawosomecdn -->
+  <script src="https://kit.fontawesome.com/6db3cd2ea5.js" crossorigin="anonymous"></script>
+  <!-- Tailwind Customized -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#F9DF8A',
+            btncolor: '#FFDC26',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- style -->
+  <style>
+    .adlam {
+      font-family: "ADLaM Display", serif;
+    }
+
+    .sora {
+      font-family: "Sora", serif;
+    }
+
+
+    @keyframes wiggle {
+
+      0%,
+      100% {
+        transform: rotate(-3deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(3deg) scale(1.1);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- header -->
+  <header class="bg-orange-50 border-b md:border-b-0 lg:border-b-0 border-black">
+    <nav class="max-w-7xl px-3 py-3 mx-auto flex justify-between items-center ">
+      <!-- left -->
+      <div class="flex justify-center items-center gap-x-2">
+        <img src="assets/logo-header.png" alt="logo-img">
+        <h3 class="sora text-xl hidden md:block lg:block">Browse<span class="text-primary">4</span>Pets</h3>
+      </div>
+      <!-- middle -->
+      <div class="hidden  lg:block">
+        <ul class="flex justify-center items-center gap-x-6">
+          <li class="hover:bg-white py-2 hover:border hover:rounded-md px-6"><a href="#" class="sora">Find a Pet</a>
+          </li>
+          <li class="hover:bg-white py-2 hover:border hover:rounded-md px-6"><a href="#" class="sora">Breeds</a></li>
+          <li class="hover:bg-white py-2 hover:border hover:rounded-md px-6"><a href="#" class="sora">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <!-- mobileMenu -->
+      <div class="block md:hidden lg:hidden">
+        <div class="dropdown  ">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden bg-white drop-shadow-sm hover:bg-yellow-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="inline-block h-5 w-5 stroke-current">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </div>
+          <ul tabindex="0"
+            class="menu menu-sm dropdown-content bg-btncolor text-black rounded-box z-[1] mt-3 -ml-32 w-40 p-2 shadow ">
+            <li><a href="#" class="sora">Find a Pet</a></li>
+            <li><a href="#" class="sora">Breeds</a></li>
+            <li><a href="#" class="sora">Contact Us</a></li>
+            <li><a class="btn border-2 border-yellow-500 text-yellow-500 bg-white hover:bg-yellow-100 hover:text-black rounded-md transition duration-300"> Login</a></li>
+            <li><a class="btn bg-yellow-400 text-black hover:bg-yellow-500 rounded-md transition duration-300">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- right -->
+      <div class="hidden md:block lg:block space-x-2">
+        <i class="fa-regular fa-bell cursor-pointer hover:text-btncolor"></i>
+        <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-btncolor"></i>
+        <button
+          class="py-2 px-6 border border-primary rounded-md sora hover:bg-btncolor hover:text-white  ">Login</button>
+        <button
+          class="py-2 px-6 bg-btncolor border border-primary rounded-md sora hover:bg-btncolor hover:text-white  ">Register</button>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <!-- main -->
+  <main>
+
+    <!-- banner section -->
+    <section class="max-w-7xl px-3 py-3  mx-auto mt-5 md:mt-12 lg:mt-12">
+      <!-- banner top -->
+      <div
+        class="space-y-4 md:space-y-6 lg:space-y-6 h-[500px] md:h-[700px] lg:h-[700px] bg-[url(assets/cat-big.png)] bg-contain bg-[center_220px] md:bg-right lg:bg-right bg-no-repeat">
+        <h1 class="text[#111111] leading-tight lg:leading-snug  text-3xl md:text-6xl lg:text-6xl adlam">Pamper Your
+          Pet,<br> Because They Deserve<br> the Bes</h1>
+        <p class="text-lg md:text-xl lg:text-xl">Discover a world of treats, toys, and essentials handpicked for<br
+            class="hidden mg:block lg:block"> your furry friends. Shop now and make tails wag with
+          joy!</p>
+        <button
+  class="py-2 px-6 bg-yellow-400 text-black border-2 border-yellow-500 rounded-xl sora 
+         hover:bg-black hover:text-yellow-400 hover:border-black 
+         shadow-md hover:shadow-xl 
+         animate-[wiggle_1s_ease-in-out_infinite] 
+         transform scale-100 hover:scale-105 
+         transition-all duration-300 ease-in-out">
+  Find a Pet
+</button>
+
+
+      </div>
+      <!-- banner bottom -->
+      <div>
+
+      </div>
+    </section>
+
+    <!-- categories section -->
+
+    <section class="max-w-7xl px-3 mx-auto  md:mt-12 lg:mt-16">
+      <!-- info heading -->
+      <div>
+        <h3 class="text-2xl md:text-4xl lg:text-4xl adlam">Browse By Categories</h3>
+      </div>
+      <!--card-box-->
+      <div class="mt-8  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6  gap-3  ">
+        <!-- card-->
+        <div class="bg-primary hover:bg-btncolor cursor-pointer p-8 text-center border rounded-md space-y-2 ">
+          <img class=" bg-white p-4 rounded-full mx-auto" src="assets/dog-cartoon.png" alt="">
+          <h3 class="adlam">Dog</h3>
+          <p class="sora font-bold">3 items</p>
+        </div>
+        <!-- card2-->
+        <div class="bg-primary hover:bg-btncolor cursor-pointer p-8 text-center border rounded-md space-y-2 ">
+          <img class=" bg-white p-4 rounded-full mx-auto" src="assets/fish-cartoon.png" alt="">
+          <h3 class="adlam">Fish</h3>
+          <p class="sora font-bold">10 items</p>
+        </div>
+        <!-- card3-->
+        <div class="bg-primary hover:bg-btncolor cursor-pointer p-8 text-center border rounded-md space-y-2 ">
+          <img class=" bg-white p-4 rounded-full mx-auto" src="assets/cat-cartoon.png" alt="">
+          <h3 class="adlam">Cat</h3>
+          <p class="sora font-bold">8 items</p>
+        </div>
+        <!-- card4-->
+        <div class="bg-primary hover:bg-btncolor cursor-pointer p-8 text-center border rounded-md space-y-2 ">
+          <img class=" bg-white p-4 rounded-full mx-auto" src="assets/bird-cartoon.png" alt="">
+          <h3 class="adlam">Birds</h3>
+          <p class="sora font-bold">20 items</p>
+        </div>
+        <!-- card5-->
+        <div class="bg-primary hover:bg-btncolor cursor-pointer p-8 text-center border rounded-md space-y-2 ">
+          <img class=" bg-white p-4 rounded-full mx-auto" src="assets/mouse-cartoon.png" alt="">
+          <h3 class="adlam">Small Pet</h3>
+          <p class="sora font-bold">6 items</p>
+        </div>
+        <!-- card6-->
+        <div class="bg-primary hover:bg-btncolor  cursor-pointer p-8 text-center border rounded-md space-y-2 ">
+          <img class=" bg-white p-4 rounded-full mx-auto" src="assets/rabbit-cartoon.png" alt="">
+          <h3 class="adlam">Rabbit</h3>
+          <p class="sora font-bold">12 items</p>
+        </div>
+        <!-- card-->
+
+
+      </div>
+
+    </section>
+
+
+    <!-- trending pet products section -->
+    <section class="bg-orange-50 mt-16">
+      <!-- Main Div -->
+      <div class="max-w-7xl px-3 py-20  mx-auto">
+        <!-- info heading -->
+        <div>
+          <h3 class="text-2xl md:text-4xl lg:text-4xl adlam">Trending Pet Products</h3>
+        </div>
+        <!-- card-box -->
+        <div class="mt-8 grid gap-6  grid-cols-1 lg:grid-cols-[35%_63%]">
+          <!-- left-side -->
+          <div
+            class=" h-[400px] space-y-5 bg-primary p-8 rounded-md bg-[url(assets/cute-pet-small.png)] bg-no-repeat hover:bg-btncolor cursor-pointer bg-right">
+            <h3 class="adlam text-xl">T- Shirt For Dogs</h3>
+            <p>Discover a world of treats, toys, and <br> essentials handpicked for</p>
+            <button class="py-2 px-6 bg-white rounded-md sora ">Shop Now</button>
+          </div>
+          <!-- right-side -->
+          <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-3">
+            <!-- card -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2 ">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/dog-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card2 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/fish-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card3 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/bird-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card4 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/rabbit-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card5 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/bird-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card6 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/pet-couch.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card7 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/fish-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card8 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div class="text-xs">
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/pet-couch.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card9 -->
+            <div class="flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/rabbit-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-10 -->
+            <div class=" md:hidden lg:hidden flex justify-center items-center gap-x-8 bg-white border rounded-md p-2">
+              <!-- img -->
+              <div>
+                <img class="bg-orange-50 p-3 rounded-lg" src="assets/dog-cartoon.png" alt="">
+              </div>
+              <!-- info -->
+              <div class="text-xs space-y-1">
+                <div>
+                  <i class="fa-solid fa-star text-btncolor"></i>
+                  <p class="inline sora">4.5</p>
+                </div>
+                <div>
+                  <p class="sora">Pet Bed</p>
+                </div>
+                <div>
+                  <p class="sora">$39.99</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Happy clients says -->
+    <section class="max-w-7xl px-3 py-14  mx-auto">
+
+      <div class=" space-y-3 ">
+        <h1 class="text-[#000000] text-2xl md:text-4xl lg:text-4xl adlam">Happy <span class="">Clients says</span></h1>
+      </div>
+
+      <!-- card-box -->
+      <div class="grid gap-5 justify-center items-center md:grid-cols-2 lg:grid-cols-4 pt-16">
+
+        <!-- card -->
+        <div class="border border-btncolor adlam rounded-lg bg-white hover:bg-orange-50   p-10 space-y-6 text-center">
+
+          <div><img src="assets/user-1.png" class="w-2/5 mx-auto " alt="clients"></div>
+          <div>
+            <p>Slate helps you see how
+              many more days you need
+              to work to reach your financial
+              goal for the month and year.</p>
+          </div>
+          <div>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" checked="checked" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+            </div>
+            <div>
+              <p class=" mt-3">Regina Miles</p>
+            </div>
+            <div>
+              <p class="mt-3">Businessman</p>
+            </div>
+          </div>
+        </div>
+        <div class="border border-btncolor adlam rounded-lg bg-white hover:bg-orange-50  p-10 space-y-6 text-center">
+
+          <div><img src="assets/user-2.png" class="w-2/5 mx-auto " alt="clients"></div>
+          <div>
+            <p>Slate helps you see how
+              many more days you need
+              to work to reach your financial
+              goal for the month and year.</p>
+          </div>
+          <div>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" checked="checked" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+            </div>
+            <div>
+              <p class="mt-3">Killbate Kilsona</p>
+            </div>
+            <div>
+              <p class="mt-3">Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="border border-btncolor adlam rounded-lg bg-white hover:bg-orange-50   p-10 space-y-6 text-center">
+
+          <div><img src="assets/user-3.png" class="w-2/5 mx-auto " alt="clients"></div>
+          <div>
+            <p>Slate helps you see how
+              many more days you need
+              to work to reach your financial
+              goal for the month and year.</p>
+          </div>
+          <div>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" checked="checked" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+            </div>
+            <div>
+              <p class=" mt-3">Regina Miles</p>
+            </div>
+            <div>
+              <p class="mt-3">Banker</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-btncolor adlam rounded-lg bg-white hover:bg-orange-50   p-10 space-y-6 text-center">
+
+          <div><img src="assets/user4.png" class="w-2/5 mx-auto " alt="clients"></div>
+          <div>
+            <p>Slate helps you see how
+              many more days you need
+              to work to reach your financial
+              goal for the month and year.</p>
+          </div>
+          <div>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" checked="checked" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+            </div>
+            <div>
+              <p class="mt-3">Robert Winson</p>
+            </div>
+            <div>
+              <p class="mt-3">IT Expert</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- price section -->
+    <section class="max-w-7xl px-3 py-14 pb-32  mx-auto ">
+      <!-- info heading -->
+      <div>
+        <h3 class="text-2xl md:text-4xl lg:text-4xl adlam">Everyday low Price</h3>
+      </div>
+      <div class="mt-8 grid gap-6  lg:grid-cols-[60%_38%]">
+
+        <!-- left -->
+        <div
+          class="bg-gradient-to-r from-[#F8CCFB] to-[#ACD2FD] rounded-md p-6 md:px-16 lg:px-16 flex md:items-center lg:items-center">
+          <!-- text info -->
+          <div class="space-y-5 ">
+            <p class="adlam hidden md:block lg:block">Under Price</p>
+            <h3 class="adlam text-sm md:text-3xl lg:text-3xl">Pet Grooming Mitt</h3>
+            <p class="adlam text-white hidden md:block lg:block">(Easy Hair Removal)</p>
+            <h3 class="adlam text-3xl md:text-5xl lg:text-5xl text-white md:text-black lg:text-black">$7.99</h3>
+          </div>
+          <!-- img -->
+          <div>
+            <img src="assets/cute-dog-mid.png" alt="dog">
+          </div>
+        </div>
+        <!-- right -->
+        <div class="bg-primary space-y-3 p-6 rounded-md bg-gradient-to-r from-[#FFF9F4] to-[#F9DF8A]">
+          <h3 class="adlam text-xl">T- Shirt For Dogs</h3>
+          <h3 class="adlam text-3xl md:text-5xl lg:text-5xl text-[#FFDC26] ">$7.99</h3>
+          <img src="assets/cute-pet-mid.png" alt="dog">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+
+  <footer class="mt-60 bg-primary pt-60 relative">
+
+    <!-- news section -->
+
+    <section class="max-w-7xl mx-auto -mt-[30rem] ">
+      <div
+        class=" bg-orange-50 mx-3 py-14 rounded-md flex flex-col md:flex-row lg:flex-row justify-around items-center">
+        <!-- left -->
+        <div>
+          <img src="assets/cute-pet-mid.png" alt="dog">
+        </div>
+        <!-- right -->
+        <div class="space-y-6 text-center md:text-left lg:text-left">
+          <h3 class=" text-2xl md:text-4xl lg:text-4xl adlam">Get Pawsome News!</h3>
+          <p class="sora px-3 md:px-0 lg:px-0 ">Exclusive training tips, ticks, product deals and more.</p>
+          <input class="block mx-auto md:w-full lg:w-full p-4 rounded-md border border-btncolor " type="email" name=""
+            id="" placeholder="Enter Email...">
+          <button
+            class="py-2 px-6 bg-btncolor border border-primary rounded-md sora hover:bg-btncolor hover:text-white  ">Subscribe</button>
+        </div>
+      </div>
+    </section>
+   
